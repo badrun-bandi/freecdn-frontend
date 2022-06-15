@@ -1,0 +1,40 @@
+<div class="container">
+  <h3 class="mt-4">View Freelancer Details</h3>
+  <mat-card class="freelancer-details" *ngIf="freelancer$ | async as freelancer">
+    <table>
+      <ng-container *ngIf="!!freelancer">
+      <tr>
+        <td class="ps-4 text-start">Username:</td><td>{{ freelancer.username }}</td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start">Phone Number:</td><td>{{ freelancer.phoneNumber }}</td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start">Email:</td><td>{{ freelancer.email }}</td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start">Skillsets:</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let skillsets of freelancer.skillsets">
+        <td></td>
+        <td >
+          {{ skillsets | titlecase }}
+        </td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start">Hobby:</td>
+        <td></td>
+      </tr>
+      <tr *ngFor="let hobby of freelancer.hobby">
+        <td></td>
+        <td >
+          {{ hobby | titlecase }}
+        </td>
+      </tr>
+      <div *ngIf="!freelancer"><h4>Freelancer Not Found</h4></div>
+      </ng-container>
+    </table>
+  </mat-card>
+  <a class="mt-4" [routerLink]="['/freelancer']"><button class="mt-4 btn btn-primary" type="button">Back to list</button></a>
+</div>

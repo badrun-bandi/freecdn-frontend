@@ -1,0 +1,53 @@
+
+ <h3 class="mt-4">Add/Update Freelancer Details</h3>
+<div class="container-details m-3">
+  <div class="p-4">
+  <form [formGroup]="freelanceForm">
+    <table>
+      <tr>
+        <td class="ps-4 text-start"><label for="username">Username:</label></td>
+        <td class="ps-4 text-start"><input id="username" type="text" formControlName="username"></td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"><label for="phoneNumber">Phone Number:</label></td>
+        <td class="ps-4 text-start"><input id="phoneNumber" type="text" formControlName="phoneNumber"></td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"><label for="email">Email:</label></td>
+        <td class="ps-4 text-start"><input id="email" type="text" formControlName="email">  </td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"><label for="skillsets">Skillsets:</label></td>
+        <td class="ps-4 text-start"></td>
+      </tr>
+      <tr formArrayName="skillsets" *ngFor="let skill of skillsets.controls; let i = index">
+        <td class="ps-4 text-start"></td>
+        <td class="ps-4 text-start"><input id="skillset" type="text" formControlName="{{i}}" value="{{ skill }}"><button type="button" (click)="removeItem('skillsets', i)">Remove</button></td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"></td>
+        <td class="ps-4 text-start"><button type="button" (click)="addItem('skillsets')">Add skillset</button></td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"><label for="hobby">Hobby:</label></td>
+        <td class="ps-4 text-start"></td>
+      </tr>
+      <tr formArrayName="hobby" *ngFor="let hobby of hobbies.controls; let i = index">
+        <td class="ps-4 text-start"></td>
+        <td class="ps-4 text-start"><input id="hobby" type="text" formControlName="{{i}}" value="{{ hobby }}"><button type="button" (click)="removeItem('hobby', i)">Remove</button></td>
+      </tr>
+      <tr>
+        <td class="ps-4 text-start"></td>
+        <td class="ps-4 text-start"><button type="button" (click)="addItem('hobby')">Add hobby</button></td>
+      </tr>
+    </table>
+    <!-- 
+    <input id="skillsets" type="text" formControlName="skillsets">
+    <label for="hobby">Hobby:</label>
+    <input id="hobby" type="text" formControlName="hobby"> -->
+  </form>
+  </div>
+  <a [routerLink]="['/freelancer']"><button type="button" class="m-4 btn btn-primary">Back to list</button></a>
+  <a [routerLink]=""><button *ngIf="!isUpdate" type="button" (click)="save()" class="m-4 btn btn-primary">Save</button></a>
+  <a [routerLink]=""><button *ngIf="isUpdate" type="button" (click)="update()" class="m-4 btn btn-primary">Update</button></a>
+</div>

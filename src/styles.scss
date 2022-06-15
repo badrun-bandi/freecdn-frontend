@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { 
+    height: 100%;   
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container{
+    min-width:800px;         
+    width: auto !important;   /* Firefox will set width as auto */
+    width:800px;             /* As IE ignores !important it will set width as 1000px; */
+}

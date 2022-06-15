@@ -1,0 +1,16 @@
+<div class="search-box">
+  <div class="row">
+    <div class="col-4">
+
+    </div>
+    <div class="col">
+      <h4 class="mt-4 float-end text-light">Search:</h4>
+    </div>
+    <div class="col mt-2">
+      <mat-form-field appearance="fill">
+        <mat-label class="mt-2">Username</mat-label>
+        <input matInput placeholder="username" [(ngModel)]="userName" (input)="searchOnChange()">
+      </mat-form-field>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+@import '~src/scss/_variables.scss';
+
+.container-details {
+  background-color: $secondary-color;
+  border-radius: 8px;
+
+  table {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  td {
+    vertical-align: top;
+    position: relative;
+
+    &:first-child {
+      padding-right: 10px;
+      font-weight: bold;
+    }
+
+    &:first-child:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  tr.bordered > td {
+      border-bottom: 1px solid  $primary-color;
+  }
+
+  tr.spacer > td {
+    height: 10px;
+  }
+  
+  td + td {
+    padding-left: 10px;
+  }
+
+  td + td:before {
+    padding-right: 10px;
+  }
+
+  td span {
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-weight: normal;
+    font-size: 17px;
+  }
+
+  img {
+    max-height: 200px;
+  }
+}
