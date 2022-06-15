@@ -8,7 +8,7 @@ import { User } from 'src/app/model/user.model';
   providedIn: 'root'
 })
 export class FreelancerService{
-  baseURL = 'http://localhost:8080/freecdn/freelance';
+  baseURL = '/freecdn/freelance';
 
   constructor(
     private httpClient: HttpClient

@@ -28,11 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap-grid.min.css",
-              "./node_modules/bootstrap/dist/css/bootstrap-utilities.min.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -59,7 +57,12 @@
                 }
               ],
               "outputHashing": "all",
-              "vendorChunk": true
+              "buildOptimizer": true,
+              "optimization": true,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": false,
+              "namedChunks": true
             },
             "development": {
               "buildOptimizer": false,

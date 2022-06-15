@@ -8,7 +8,7 @@ const routes: Routes = [
     path: 'freelancer',
     loadChildren: () => import('./freelancer/freelancer.module').then(x => x.FreelancerModule)
   },
-  { path: '**', redirectTo: '', pathMatch: 'full' }
+  { path: '**', redirectTo: '/freelancer', pathMatch: 'full' }
 ];
 
 @NgModule({
